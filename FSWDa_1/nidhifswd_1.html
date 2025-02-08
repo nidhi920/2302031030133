@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Korea Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-blue-900 text-white p-5 space-y-6">
+            <h2 class="text-xl font-bold">🇰🇷 Korea Dashboard</h2>
+            <nav class="space-y-3">
+                <button onclick="showPage('home')" class="block hover:text-gray-300">🏠 Home</button>
+                <button onclick="showPage('economy')" class="block hover:text-gray-300">📊 Economy</button>
+                <button onclick="showPage('tourism')" class="block hover:text-gray-300">🌏 Tourism</button>
+                <button onclick="showPage('culture')" class="block hover:text-gray-300">🎭 Culture</button>
+                <button onclick="showPage('settings')" class="block hover:text-gray-300">⚙ Settings</button>
+            </nav>
+            <button class="mt-10 px-4 py-2 bg-red-600 text-white rounded">Logout</button>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- Home Page -->
+            <section id="home" class="content-section">
+                <div class="relative bg-cover bg-center h-64 rounded-lg" style="background-image: url('https://source.unsplash.com/1600x900/?south-korea,city');">
+                    <div class="bg-black bg-opacity-50 h-full flex flex-col justify-center items-center text-white p-6">
+                        <h1 class="text-3xl font-bold">Welcome to South Korea Dashboard</h1>
+                        <p class="mt-4 text-lg text-center max-w-2xl">Discover insights about South Korea’s economy, tourism, and rich culture. Stay updated with the latest trends and explore the beauty of this vibrant nation.</p>
+                        <button onclick="showPage('economy')" class="mt-4 px-6 py-2 bg-yellow-500 text-black font-semibold rounded-lg shadow-md hover:bg-yellow-600">Explore Now</button>
+                    </div>
+                </div>
+                
+                <!-- Feature Section -->
+                <div class="mt-8 grid grid-cols-3 gap-6">
+                    <div class="bg-white shadow-lg p-5 rounded-lg text-center">
+                        <h3 class="text-lg font-semibold">📊 Economy</h3>
+                        <p class="text-sm text-gray-600">South Korea is a global leader in technology, exports, and innovation.</p>
+                    </div>
+                    <div class="bg-white shadow-lg p-5 rounded-lg text-center">
+                        <h3 class="text-lg font-semibold">🌏 Tourism</h3>
+                        <p class="text-sm text-gray-600">Explore stunning landscapes, rich history, and K-culture.</p>
+                    </div>
+                    <div class="bg-white shadow-lg p-5 rounded-lg text-center">
+                        <h3 class="text-lg font-semibold">🎭 Culture</h3>
+                        <p class="text-sm text-gray-600">From K-pop to traditional arts, Korea’s culture is world-famous.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Economy Section -->
+            <section id="economy" class="content-section hidden">
+                <h2 class="text-xl font-bold">📊 Economy of South Korea</h2>
+                <p class="mt-4">South Korea is a global leader in technology, automobiles, and exports.</p>
+                <ul class="list-disc ml-6 mt-2">
+                    <li>GDP: $1.8 Trillion</li>
+                    <li>Major Industries: Electronics, Shipbuilding, Automobiles</li>
+                </ul>
+            </section>
+
+            <!-- Tourism Section -->
+            <section id="tourism" class="content-section hidden">
+                <h2 class="text-xl font-bold">🌏 Tourism in South Korea</h2>
+                <p class="mt-4">South Korea attracts millions of tourists with its history, culture, and K-pop influence.</p>
+                <ul class="list-disc ml-6 mt-2">
+                    <li>Top Destinations: Seoul, Busan, Jeju Island</li>
+                    <li>Annual Tourists: 17 Million</li>
+                </ul>
+            </section>
+
+            <!-- Culture Section -->
+            <section id="culture" class="content-section hidden">
+                <h2 class="text-xl font-bold">🎭 South Korean Culture</h2>
+                <p class="mt-4">South Korea has a rich cultural heritage, combining traditional arts with modern K-culture.</p>
+                <ul class="list-disc ml-6 mt-2">
+                    <li>Traditional Arts: Hanbok, Hanok, and Calligraphy</li>
+                    <li>Modern Culture: K-Pop, K-Dramas, and Esports</li>
+                </ul>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section hidden">
+                <h2 class="text-xl font-bold">⚙ Settings</h2>
+                <p class="mt-4">Customize your dashboard preferences here.</p>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
